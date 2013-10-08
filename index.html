@@ -227,14 +227,13 @@
                     <div class="embed-codes">
                         <div class="horizontal">
                             <div class="twitter">
-                                <a href="https://twitter.com/share" class="twitter-share-button" data-via="adamfschwartz">Tweet</a>
-                                <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+                                <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://github.hubspot.com/colorshare" data-text="Colorshare: change the style of the Twitter and Facebook share buttons" data-via="HubSpotDev">Tweet</a>
                             </div>
                             <div class="facebook">
-                                <div class="fb-like" data-href="https://github.hubspot.com/color-share" data-colorscheme="light" data-layout="button_count" data-action="like" data-show-faces="false" data-send="false"></div>
+                                <div class="fb-like" data-href="http://github.hubspot.com/colorshare" data-colorscheme="light" data-layout="button_count" data-action="like" data-show-faces="false" data-send="false"></div>
                             </div>
                             <div class="hacker-news">
-                                <a href="http://news.ycombinator.com/submit" class="hn-share-button" data-url="http://dev.hubspot.com/blog/webkit-resource-performance">Vote on HN</a>
+                                <a href="http://news.ycombinator.com/submit" class="hn-share-button" data-url="http://github.hubspot.com/colorshare">Vote on HN</a>
                                 <script>
                                     (function(d, t) {
                                         var g = d.createElement(t),
@@ -259,7 +258,7 @@
                                 <script type="IN/Share" data-counter="right"></script>
                             </div>
                             <div class="pinterest">
-                                <a href="//www.pinterest.com/pin/create/button/?url=http%3A%2F%2Fwww.flickr.com%2Fphotos%2Fkentbrew%2F6851755809%2F&media=http%3A%2F%2Ffarm8.staticflickr.com%2F7027%2F6851755809_df5b2051c9_z.jpg&description=Next%20stop%3A%20Pinterest" data-pin-do="buttonPin" data-pin-config="beside"><img src="//assets.pinterest.com/images/pidgets/pin_it_button.png" /></a>
+                                <a href="//www.pinterest.com/pin/create/button/?url=http%3A%2F%2Fgithub.hubspot.com%2Fcolorshare&media=http%3A%2F%2Fi.imgur.com%2F166H8jc.png&description=Style%20your%20Facebook%2C%20Twitter%20and%20Pinterest%20social%20sharing%20buttons" data-pin-do="buttonPin" data-pin-config="beside"><img src="//assets.pinterest.com/images/pidgets/pin_it_button.png" /></a>
                                 <script type="text/javascript" src="//assets.pinterest.com/js/pinit.js"></script>
                             </div>
                             <div class="tumblr">
@@ -267,7 +266,7 @@
                                 <script src="http://platform.tumblr.com/v1/share.js"></script>
                             </div>
                             <div class="github">
-                                <iframe src="http://ghbtns.com/github-btn.html?user=HubSpot&amp;repo=color-share&amp;type=watch&amp;count=true&amp;size=small" allowtransparency="true" frameborder="0" scrolling="0" width="200" height="20"></iframe>
+                                <iframe src="http://ghbtns.com/github-btn.html?user=HubSpot&amp;repo=colorshare&amp;type=watch&amp;count=true&amp;size=small" allowtransparency="true" frameborder="0" scrolling="0" width="200" height="20"></iframe>
                             </div>
                         </div>
                     </div>
@@ -284,17 +283,27 @@
             <div class="step">
                 <h3><span>4</span>Tell your friends</h3>
                 <div class="step-inner">
-                    <div class="embed-codes">
+                    <div class="embed-codes embed-codes-big">
                         <div class="horizontal">
                             <div class="github">
-                                <iframe src="http://ghbtns.com/github-btn.html?user=HubSpot&amp;repo=color-share&amp;type=watch&amp;count=true&amp;size=small" allowtransparency="true" frameborder="0" scrolling="0" width="200" height="20"></iframe>
+                                <iframe src="http://ghbtns.com/github-btn.html?user=HubSpot&amp;repo=colorshare&amp;type=watch&amp;count=true&amp;size=large" allowtransparency="true" frameborder="0" scrolling="0" width="200" height="30"></iframe>
                             </div>
-                            <div class="twitter">
-                                <a href="https://twitter.com/share" class="twitter-share-button" data-via="adamfschwartz">Tweet</a>
-                                <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
-                            </div>
+
+                            <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://github.hubspot.com/colorshare" data-text="Colorshare: change the style of the Twitter and Facebook share buttons" data-via="HubSpotDev" data-size="large">Tweet</a>
+                            <script>
+                                if (Math.random() >= 0.5)
+                                    var recommends = ['hubspotdev', 'zackbloom', 'adamfschwartz'];
+                                else
+                                    var recommends = ['hubspotdev', 'adamfschwartz', 'zackbloom'];
+
+                                var $button = $('.twitter-share-button');
+                                if ($button.length)
+                                    $button.data('related', recommends.join(','));
+                            </script>
+                            <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
                             <div class="facebook">
-                                <div class="fb-like" data-href="https://github.hubspot.com/color-share" data-colorscheme="light" data-layout="button_count" data-action="like" data-show-faces="false" data-send="false"></div>
+                                <div class="fb-like" data-href="https://github.hubspot.com/colorshare" data-colorscheme="light" data-layout="button_count" data-action="like" data-show-faces="false" data-send="false"></div>
                             </div>
                             <div class="hacker-news">
                                 <a href="http://news.ycombinator.com/submit" class="hn-share-button" data-url="http://dev.hubspot.com/blog/webkit-resource-performance">Vote on HN</a>
