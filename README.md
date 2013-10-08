@@ -7,4 +7,4 @@ and otherwise isolated.
 
 ### [Go Style Some Buttons!](http://github.hubspot.com/colorshare)
 
-Make sure to star this repo to find it later!
+Make sure to star this repo to find it later.
