@@ -168,5 +168,5 @@ textarea:focus {
 .slider {
     height: 1rem;
     width: 100%;
-    background: -webkit-linear-gradient(left, hsl(0, 100%, 50%), hsl(300, 100%, 50%), hsl(240, 100%, 50%), hsl(180, 100%, 50%), hsl(120, 100%, 50%), hsl(60, 100%, 50%), hsl(0, 100%, 50%));
+    background: -webkit-linear-gradient(left, hsl(0, 85%, 55%), hsl(300, 85%, 55%), hsl(240, 85%, 55%), hsl(180, 85%, 55%), hsl(120, 85%, 55%), hsl(60, 85%, 55%), hsl(0, 85%, 55%));
 }
