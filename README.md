@@ -5,6 +5,6 @@ Style your Facebook, Twitter, Pinterest, Hacker News, Github, Tumblr, LinkedIn a
 Uses CSS filters and animations along with some color math to allow you to style them even though they
 are in iframes.
 
-### [Style Some Buttons](http://github.hubspot.com/colorshare)
+### [Go Style Some Buttons!](http://github.hubspot.com/colorshare)
 
 Make sure to star this repo to find it later!
