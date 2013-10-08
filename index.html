@@ -218,12 +218,7 @@
                             background: rgba(255, 255, 255, 0.3);
                         }
                     </style>
-                </div>
-            </div>
-
-            <div class="step">
-                <h3><span>2</span>View the preview</h3>
-                <div class="step-inner">
+                    <br/>
                     <div class="embed-codes">
                         <div class="horizontal">
                             <div class="twitter">
@@ -270,18 +265,40 @@
                             </div>
                         </div>
                     </div>
+
+                    <div class="advanced">
+                        <p class="advanced-label">Advanced Options</p>
+                        <div class="advanced-inner">
+                            <p>Add a loading animation</p>
+                            <select id="animation-type">
+                                <option>None
+                                <option>Glow
+                                <option>Blur
+                                <option>Colorize
+                            </select>
+                        </div>
+                    </div>
+                    <script>
+                        $('.advanced-label').click(function(){
+                            if ($(this).parent().hasClass('open')) {
+                                $(this).parent().removeClass('open');
+                            } else {
+                                $(this).parent().addClass('open');
+                            }
+                        });
+                    </script>
                 </div>
             </div>
 
             <div class="step">
-                <h3><span>3</span>Copy and paste this code to your page</h3>
+                <h3><span>2</span>Copy and paste this code to your page</h3>
                 <div class="step-inner">
                     <textarea class="embed-code"></textarea>
                 </div>
             </div>
 
             <div class="step">
-                <h3><span>4</span>Tell your friends</h3>
+                <h3><span>3</span>Tell your friends</h3>
                 <div class="step-inner">
                     <div class="embed-codes embed-codes-big">
                         <div class="horizontal">
@@ -318,19 +335,6 @@
                             </div>
                         </div>
                     </div>
-                </div>
-            </div>
-
-            <div class="step">
-                <h3><span>5</span>Play around</h3>
-                <div class="step-inner">
-                    <label for="animation-type">Loading Animation</label>
-                    <select id="animation-type">
-                        <option>None
-                        <option>Glow
-                        <option>Blur
-                        <option>Colorize
-                    </select>
                 </div>
             </div>
 

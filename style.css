@@ -144,3 +144,35 @@ textarea:focus {
     width: 100%;
     background: -webkit-linear-gradient(left, hsl(0, 85%, 55%), hsl(300, 85%, 55%), hsl(240, 85%, 55%), hsl(180, 85%, 55%), hsl(120, 85%, 55%), hsl(60, 85%, 55%), hsl(0, 85%, 55%));
 }
+
+.advanced {
+    margin-top: 1.5rem;
+}
+
+.advanced p {
+    margin: 0 0 1rem;
+}
+
+.advanced-label {
+    opacity: 0.7;
+    font-size: 0.8rem;
+    cursor: pointer;
+}
+
+.advanced.open .advanced-label, .advanced-label:hover {
+    opacity: 1;
+}
+
+.advanced-inner {
+    height: 0;
+    overflow: hidden;
+    -webkit-transition: height 0.4s;
+}
+
+.advanced-inner p {
+    margin-bottom: 0;
+}
+
+.advanced.open .advanced-inner {
+    height: 3rem;
+}
