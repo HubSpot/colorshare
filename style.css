@@ -133,6 +133,10 @@ h2 {
     margin-top: .11rem;
 }
 
+.step-inner p {
+    font-size: .7rem;
+}
+
 textarea {
     background: #eee;
     border: 0;
