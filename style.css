@@ -171,6 +171,10 @@ textarea:focus {
     opacity: 1;
 }
 
+.advanced-label:hover {
+    text-decoration: underline;
+}
+
 .advanced-inner {
     height: 0;
     overflow: hidden;
