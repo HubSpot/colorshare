@@ -28,41 +28,7 @@ body {
 @media (max-width: 1560px) { html { font-size: 174%; } }
 @media (max-width: 1540px) { html { font-size: 172%; } }
 @media (max-width: 1520px) { html { font-size: 170%; } }
-@media (max-width: 1500px) { html { font-size: 168%; } }
-@media (max-width: 1480px) { html { font-size: 166%; } }
-@media (max-width: 1460px) { html { font-size: 164%; } }
-@media (max-width: 1440px) { html { font-size: 162%; } }
-@media (max-width: 1420px) { html { font-size: 160%; } }
-@media (max-width: 1400px) { html { font-size: 158%; } }
-@media (max-width: 1380px) { html { font-size: 156%; } }
-@media (max-width: 1360px) { html { font-size: 154%; } }
-@media (max-width: 1340px) { html { font-size: 152%; } }
-@media (max-width: 1320px) { html { font-size: 150%; } }
-@media (max-width: 1300px) { html { font-size: 148%; } }
-@media (max-width: 1280px) { html { font-size: 146%; } }
-@media (max-width: 1260px) { html { font-size: 144%; } }
-@media (max-width: 1240px) { html { font-size: 142%; } }
-@media (max-width: 1220px) { html { font-size: 140%; } }
-@media (max-width: 1200px) { html { font-size: 138%; } }
-@media (max-width: 1180px) { html { font-size: 136%; } }
-@media (max-width: 1160px) { html { font-size: 134%; } }
-@media (max-width: 1140px) { html { font-size: 132%; } }
-@media (max-width: 1120px) { html { font-size: 130%; } }
-@media (max-width: 1100px) { html { font-size: 128%; } }
-@media (max-width: 1080px) { html { font-size: 126%; } }
-@media (max-width: 1060px) { html { font-size: 124%; } }
-@media (max-width: 1040px) { html { font-size: 122%; } }
-@media (max-width: 1020px) { html { font-size: 120%; } }
-@media (max-width: 1000px) { html { font-size: 118%; } }
-@media (max-width: 980px) { html { font-size: 116%; } }
-@media (max-width: 960px) { html { font-size: 114%; } }
-@media (max-width: 940px) { html { font-size: 112%; } }
-@media (max-width: 920px) { html { font-size: 110%; } }
-@media (max-width: 900px) { html { font-size: 108%; } }
-@media (max-width: 880px) { html { font-size: 106%; } }
-@media (max-width: 860px) { html { font-size: 104%; } }
-@media (max-width: 840px) { html { font-size: 102%; } }
-@media (max-width: 820px) { html { font-size: 100%; } }
+@media (max-width: 767px) { html { font-size: 100%; } }
 
 h2, h3, h4, h5 {
     font-weight: normal;
@@ -133,6 +99,10 @@ h2 {
     margin-top: .11rem;
 }
 
+.step-inner p {
+    font-size: .7rem;
+}
+
 textarea {
     background: #eee;
     border: 0;
@@ -168,5 +138,5 @@ textarea:focus {
 .slider {
     height: 1rem;
     width: 100%;
-    background: -webkit-linear-gradient(left, hsl(0, 100%, 50%), hsl(300, 100%, 50%), hsl(240, 100%, 50%), hsl(180, 100%, 50%), hsl(120, 100%, 50%), hsl(60, 100%, 50%), hsl(0, 100%, 50%));
+    background: -webkit-linear-gradient(left, hsl(0, 85%, 55%), hsl(300, 85%, 55%), hsl(240, 85%, 55%), hsl(180, 85%, 55%), hsl(120, 85%, 55%), hsl(60, 85%, 55%), hsl(0, 85%, 55%));
 }

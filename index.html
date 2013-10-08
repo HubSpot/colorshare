@@ -144,13 +144,15 @@
 
         <!-- Facebook -->
         <div id="fb-root"></div>
-        <script>(function(d, s, id) {
-          var js, fjs = d.getElementsByTagName(s)[0];
-          if (d.getElementById(id)) return;
-          js = d.createElement(s); js.id = id;
-          js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
-          fjs.parentNode.insertBefore(js, fjs);
-        }(document, 'script', 'facebook-jssdk'));</script>
+        <script>
+            (function(d, s, id) {
+                var js, fjs = d.getElementsByTagName(s)[0];
+                if (d.getElementById(id)) return;
+                js = d.createElement(s); js.id = id;
+                js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
+                fjs.parentNode.insertBefore(js, fjs);
+            }(document, 'script', 'facebook-jssdk'));
+        </script>
         <!-- Facebook -->
 
         <div class="section">
@@ -179,7 +181,7 @@
                             max: 360,
                             slide: function(event, ui) {
                                 var c = 360 - ui.value;
-                                setUIColors(c);
+                                //setUIColors(c);
                                 setColor(c);
                             }
                         });
@@ -320,6 +322,13 @@
                         <option>Blur
                         <option>Colorize
                     </select>
+                </div>
+            </div>
+
+            <div class="step">
+                <h3>About</h3>
+                <div class="step-inner">
+                    <p>Colorshare was made by <a href="https://twitter.com/adamfschwartz">Adam Schwartz</a> and <a href="https://twitter.com/zackbloom">Zack Bloom</a> of <a href="http://dev.hubspot.com/">HubSpot</a>.</p>
                 </div>
             </div>
         </div>
