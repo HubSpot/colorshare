@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]> <html class="no-js ie6 ie9-and-less ie8-and-less ie7-and-less" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js ie7 ie9-and-less ie8-and-less ie7-and-less" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js ie8 ie9-and-less ie8-and-less" lang="en"> <![endif]-->
+<!--[if IE 9]>    <html class="no-js ie9 ie9-and-less" lang="en"> <![endif]-->
+<!--[if gt IE 9]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="chrome=1">
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+        <title>Colorshare | Colorize your Share Buttons</title>
+        <link rel="icon" href="http://static.hubspot.com/favicon.ico">
+        <script src="http://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+        <link rel="stylesheet" href="style.css" />
+    </head>
+    <body>
+        <script>
+            var originalColors = {
+                twitter: '#69a8f2'
+            };
+        </script>
+        <style>
+            a.twitter-share-button, a.hn-share-button {
+                opacity: 0;
+            }
+
+            iframe.twitter-share-button.twitter-tweet-button {
+                -webkit-filter: hue-rotate(90deg);
+            }
+
+            .fb-like.fb_iframe_widget[data-colorscheme="light"] iframe {
+                -webkit-filter: hue-rotate(80deg);
+            }
+
+            iframe.hn-share-iframe {
+                -webkit-filter: hue-rotate(-93deg);
+            }
+
+            iframe[src^="http://ghbtns.com"] {
+                -webkit-filter: hue-rotate(87deg);
+            }
+        </style>
+
+        <style>
+            h1 {
+                color: rgb(228, 88, 194);
+            }
+
+            .step > h3 > span {
+                background: rgb(228, 88, 194);
+            }
+
+            textarea:focus {
+                outline: 2px solid rgb(228, 88, 194);
+            }
+        </style>
+
+        <div class="section">
+            <h1>Colorshare</h1>
+            <h2>
+                <span>Colorize your</span>
+                <div class="twitter-embed-code-inline-wrap">
+                    <div class="twitter-embed-code-inline">
+                        <a href="https://twitter.com/share" class="twitter-share-button" data-size="large" data-via="adamfschwartz">Tweet</a>
+                        <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+                    </div>
+                </div>
+                <span>buttons.</span>
+            </h2>
+
+            <div class="step">
+                <h3><span>1</span>Choose a color</h3>
+                <div class="step-inner">
+                    <input type="color" value="#e458c2" />
+                </div>
+            </div>
+
+            <div class="step">
+                <h3><span>2</span>View the preview</h3>
+                <div class="step-inner">
+                    <div class="embed-codes">
+                        <!-- Facebook -->
+                        <div id="fb-root"></div>
+                        <script>(function(d, s, id) {
+                          var js, fjs = d.getElementsByTagName(s)[0];
+                          if (d.getElementById(id)) return;
+                          js = d.createElement(s); js.id = id;
+                          js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
+                          fjs.parentNode.insertBefore(js, fjs);
+                        }(document, 'script', 'facebook-jssdk'));</script>
+                        <!-- Facebook -->
+
+                        <div class="horizontal">
+                            <div class="twitter">
+                                <a href="https://twitter.com/share" class="twitter-share-button" data-via="adamfschwartz">Tweet</a>
+                                <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+                            </div>
+                            <div class="facebook">
+                                <div class="fb-like" data-href="https://github.hubspot.com/color-share" data-colorscheme="light" data-layout="button_count" data-action="like" data-show-faces="false" data-send="false"></div>
+                            </div>
+                            <div class="hacker-news">
+                                <a href="http://news.ycombinator.com/submit" class="hn-share-button" data-url="http://dev.hubspot.com/blog/webkit-resource-performance">Vote on HN</a>
+                                <script>
+                                    (function(d, t) {
+                                        var g = d.createElement(t),
+                                        s = d.getElementsByTagName(t)[0];
+                                        g.src = '//hnbutton.appspot.com/static/hn.min.js';
+                                        s.parentNode.insertBefore(g, s);
+                                    }(document, 'script'));
+                                </script>
+                            </div>
+                            <div class="google-plus">
+                            </div>
+                            <div class="linkedin">
+                            </div>
+                            <div class="pinterest">
+                            </div>
+                            <div class="github">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="step">
+                <h3><span>3</span>Copy and paste this code to your page</h3>
+                <div class="step-inner">
+                    <textarea>&lt;style&gt;&lt;/style&gt;</textarea>
+                </div>
+            </div>
+
+            <div class="step">
+                <br/>
+                <h3 style="opacity: 0.5">Optional</h3>
+            </div>
+
+            <div class="step">
+                <h3><span>4</span>Share the love ;)</h3>
+                <div class="step-inner">
+                    <div class="embed-codes">
+                        <!-- Facebook -->
+                        <div id="fb-root"></div>
+                        <script>(function(d, s, id) {
+                          var js, fjs = d.getElementsByTagName(s)[0];
+                          if (d.getElementById(id)) return;
+                          js = d.createElement(s); js.id = id;
+                          js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
+                          fjs.parentNode.insertBefore(js, fjs);
+                        }(document, 'script', 'facebook-jssdk'));</script>
+                        <!-- Facebook -->
+
+                        <div class="horizontal">
+                            <div class="github">
+                                <iframe src="http://ghbtns.com/github-btn.html?user=HubSpot&amp;repo=color-share&amp;type=watch&amp;count=true&amp;size=small" allowtransparency="true" frameborder="0" scrolling="0" width="200" height="20"></iframe>
+                            </div>
+                            <div class="twitter">
+                                <a href="https://twitter.com/share" class="twitter-share-button" data-via="adamfschwartz">Tweet</a>
+                                <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+                            </div>
+                            <div class="facebook">
+                                <div class="fb-like" data-href="https://github.hubspot.com/color-share" data-colorscheme="light" data-layout="button_count" data-action="like" data-show-faces="false" data-send="false"></div>
+                            </div>
+                            <div class="hacker-news">
+                                <a href="http://news.ycombinator.com/submit" class="hn-share-button" data-url="http://dev.hubspot.com/blog/webkit-resource-performance">Vote on HN</a>
+                                <script>
+                                    (function(d, t) {
+                                        var g = d.createElement(t),
+                                        s = d.getElementsByTagName(t)[0];
+                                        g.src = '//hnbutton.appspot.com/static/hn.min.js';
+                                        s.parentNode.insertBefore(g, s);
+                                    }(document, 'script'));
+                                </script>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script>document.body.className = 'page-loaded';</script>
+
+        <!-- Start of Async HubSpot Analytics Code -->
+        <script type="text/javascript">
+            (function(d,s,i,r) {
+                if (d.getElementById(i)){return;}
+                var n=d.createElement(s),e=d.getElementsByTagName(s)[0];
+                n.id=i;n.src='//js.hubspot.com/analytics/'+(Math.ceil(new Date()/r)*r)+'/51294.js';
+                e.parentNode.insertBefore(n, e);
+            })(document,"script","hs-analytics",300000);
+        </script>
+        <!-- End of Async HubSpot Analytics Code -->
+
+        <!-- Force 3d acceleration always and forever :) -->
+        <div style="-webkit-transform: translateZ(0)"></div>
+    </body>
+</html>
