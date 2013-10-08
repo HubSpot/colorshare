@@ -2,8 +2,8 @@ Style your Facebook, Twitter, Pinterest, Hacker News, Github, Tumblr, LinkedIn a
 
 ![Demo](http://i.imgur.com/Boo6T5h.png)
 
-Uses CSS filters and animations along with some color math to allow you to style buttons which are in iframes and otherwise isolated.
-are in iframes.
+Uses CSS filters and animations along with some color math to allow you to style buttons which are in iframes 
+and otherwise isolated.
 
 ### [Go Style Some Buttons!](http://github.hubspot.com/colorshare)
 
