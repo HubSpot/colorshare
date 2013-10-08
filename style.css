@@ -13,6 +13,10 @@ a, a:hover, a:active {
     text-decoration: none
 }
 
+a {
+    color: hsl(315, 75%, 50%);
+}
+
 body {
     font-family: "proxima-nova", "Helvetica Neue", sans-serif;
 }
