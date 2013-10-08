@@ -1,0 +1,91 @@
+<html>
+  <head>
+    <link rel="stylesheet" media="screen" type="text/css" href="lib/colorpicker/css/colorpicker.css" />
+    <script type="text/javascript" src="lib/colorpicker/js/jquery.js"></script>
+    <script type="text/javascript" src="lib/colorpicker/js/colorpicker.js"></script>
+  </head>
+  <body>
+    <div class="buttons">
+      <a href="https://twitter.com/share" class="twitter-share-button" data-via="zackbloom">Tweet</a>
+      <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
+      <iframe src="//www.facebook.com/plugins/like.php?href=https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2Fplugins%2F&amp;width=200&amp;height=25&amp;colorscheme=light&amp;layout=standard&amp;action=like&amp;show_faces=true&amp;send=false" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:200px; height:25px;" allowTransparency="true"></iframe>
+
+      <div class="g-plusone" data-annotation="inline" data-width="300"></div>
+      <script type="text/javascript">
+        (function() {
+          var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+          po.src = 'https://apis.google.com/js/plusone.js';
+          var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+        })();
+      </script>
+
+      <a href="http://news.ycombinator.com/submit" class="hn-share-button">Vote on HN</a>
+      <script>
+          (function(d, t) {
+              var g = d.createElement(t),
+                  s = d.getElementsByTagName(t)[0];
+              g.src = '//hnbutton.appspot.com/static/hn.min.js';
+              s.parentNode.insertBefore(g, s);
+          }(document, 'script'));
+      </script>
+
+      <script src="//platform.linkedin.com/in.js" type="text/javascript">
+        lang: en_US
+      </script>
+      <script type="IN/Share" data-counter="right"></script> 
+
+      <a href="//www.pinterest.com/pin/create/button/?url=http%3A%2F%2Fwww.flickr.com%2Fphotos%2Fkentbrew%2F6851755809%2F&media=http%3A%2F%2Ffarm8.staticflickr.com%2F7027%2F6851755809_df5b2051c9_z.jpg&description=Next%20stop%3A%20Pinterest" data-pin-do="buttonPin" data-pin-config="beside"><img src="//assets.pinterest.com/images/pidgets/pin_it_button.png" /></a>
+      <script type="text/javascript" src="//assets.pinterest.com/js/pinit.js"></script>
+
+      <a href="http://www.tumblr.com/share" title="Share on Tumblr" style="display:inline-block; text-indent:-9999px; overflow:hidden; width:81px; height:20px; background:url('http://platform.tumblr.com/v1/share_1.png') top left no-repeat transparent;">Share on Tumblr</a>
+      <script src="http://platform.tumblr.com/v1/share.js"></script>
+
+    </div>
+
+    <script>
+      var BASE_COLORS = {
+        twitter: {h: 211, s: 52, b: 89},
+        facebook: {h: 229, s: 57, b: 62},
+        google: {h: 18, s: 71, b: 76},
+        hn: {h: 32, s: 73, b: 76},
+        linkedin: {h: 215, s: 55, b: 73},
+        pinterest: {h: 6, s: 76, b: 68},
+        tumblr: {h: 214, s: 15, b: 43}
+      };
+
+      var SELECTORS = {
+        twitter: 'iframe.twitter-share-button',
+        facebook: 'iframe[src*="facebook"]',
+        google: 'iframe[data-gapiattached]',
+        hn: 'iframe.hn-share-iframe',
+        linkedin: 'span.IN-widget',
+        pinterest: 'a[data-pin-log]',
+        tumblr: 'a[href="http://www.tumblr.com/share"]'
+      };
+
+      $(function(){
+        var $style = $('<style>');
+        $('head').append($style);
+        
+        function setColor(c){
+          styleCSS = '';
+
+          for (var company in SELECTORS){
+            var $iframe = $(SELECTORS[company]);
+
+            var h = (360 - BASE_COLORS[company].h + c) % 360;
+
+            styleCSS += SELECTORS[company] + ' {\n';
+            styleCSS += '  -webkit-filter: hue-rotate(' + h + 'deg);\n';
+            styleCSS += '}\n';
+          }
+
+          $style.html(styleCSS);
+        };
+
+        setColor(315);
+      });
+    </script>
+  </body>
+</html>
