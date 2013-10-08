@@ -145,12 +145,14 @@ textarea:focus {
     background: -webkit-linear-gradient(left, hsl(0, 85%, 55%), hsl(300, 85%, 55%), hsl(240, 85%, 55%), hsl(180, 85%, 55%), hsl(120, 85%, 55%), hsl(60, 85%, 55%), hsl(0, 85%, 55%));
 }
 
-.embed-codes-big .github, .embed-codes-big .twitter-share-button, .embed-codes-big .facebook {
+.embed-codes-big > div {
     float: left;
+    overflow: hidden;
+    width: 20%;
 }
 
-.embed-codes-big .hacker-news {
-    margin-left: 30px;
+.embed-codes-big > div.github, .embed-codes-big > div.twitter {
+    width: 30%;
 }
 
 .advanced {
