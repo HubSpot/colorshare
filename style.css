@@ -151,55 +151,6 @@ textarea:focus {
     color: inherit;
 }
 
-input[type="color"] {
-    width: 12rem;
-    height: 2.3rem;
-    font-size: 0.8rem;
-    position: relative;
-    font-family: inherit;
-    cursor: pointer;
-}
-
-input[type="color"]::before {
-    content: " ";
-    display: block;
-    position: absolute;
-    top: 0;
-    left: 3px;
-    right: 3px;
-    height: 100%;
-    border: 6px solid #fff;
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
-}
-
-input[type="color"]::after {
-    content: "Choose a color";
-    display: block;
-    text-align: center;
-    position: absolute;
-    top: 0;
-    left: -2px;
-    right: -2px;
-    height: 100%;
-    font-size: .6rem;
-    line-height: 2rem;
-    color: #fcfcfc;
-    color: rgba(255, 255, 255, 1);
-    font-weight: 800;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    border: 6px solid #fff;
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
-}
-
-input[type="color"]:active::after {
-    color: rgba(255, 255, 255, 0.4);
-}
-
 @media (max-width: 568px) {
     body {
         padding: 0;
@@ -212,4 +163,10 @@ input[type="color"]:active::after {
     .section {
         max-width: 100%;
     }
+}
+
+.slider {
+    height: 1rem;
+    width: 100%;
+    background: -webkit-linear-gradient(left, hsl(0, 100%, 50%), hsl(300, 100%, 50%), hsl(240, 100%, 50%), hsl(180, 100%, 50%), hsl(120, 100%, 50%), hsl(60, 100%, 50%), hsl(0, 100%, 50%));
 }

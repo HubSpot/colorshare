@@ -11,15 +11,11 @@
         <title>Colorshare | Colorize your Share Buttons</title>
         <link rel="icon" href="http://static.hubspot.com/favicon.ico">
         <script src="http://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
-        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+        <script src="jquery.js"></script>
+        <script src="jquery-ui.js"></script>
         <link rel="stylesheet" href="style.css" />
     </head>
     <body>
-        <script>
-            var originalColors = {
-                twitter: '#69a8f2'
-            };
-        </script>
         <style>
             a.twitter-share-button, a.hn-share-button {
                 opacity: 0;
@@ -72,7 +68,51 @@
             <div class="step">
                 <h3><span>1</span>Choose a color</h3>
                 <div class="step-inner">
-                    <input type="color" value="#e458c2" />
+                    <div class="slider"></div>
+                    <script>
+                        $('.slider').slider({
+                            range: 'min',
+                            value: 0,
+                            step: 1,
+                            min: 0,
+                            max: 360,
+                            slide: function(event, ui) {
+                                console.log(ui.value)
+                            }
+                        });
+
+                        $('.slider').find('.ui-slider-handle').unbind('keydown');
+                    </script>
+                    <style>
+                        .slider {
+                            position: relative;
+                            height: 2rem;
+                            overflow: hidden;
+                        }
+
+                        .slider > div {
+                            display: block;
+                            height: 100%;
+                            background: #000;
+                            opacity: 0;
+                        }
+
+                        .slider > a {
+                            display: block;
+                            height: 100%;
+                            width: 20px;
+                            position: absolute;
+                            top: 0;
+                            outline: none;
+                            margin-left: -10px;
+                            border: 2px solid rgba(0, 0, 0, 0.3);
+                            box-sizing: border-box;
+                            border-top: 0;
+                            border-bottom: 0;
+                            box-shadow: -1px 0 rgba(0, 0, 0, 0.3), -2px 0 rgba(0, 0, 0, 0.2), -4px 0 rgba(0, 0, 0, 0.1), 1px 0 rgba(0, 0, 0, 0.3), 2px 0 rgba(0, 0, 0, 0.2), 4px 0 rgba(0, 0, 0, 0.1);
+                            background: rgba(255, 255, 255, 0.4);
+                        }
+                    </style>
                 </div>
             </div>
 
