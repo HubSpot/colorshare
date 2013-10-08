@@ -1,8 +1,6 @@
 <html>
   <head>
-    <link rel="stylesheet" media="screen" type="text/css" href="lib/colorpicker/css/colorpicker.css" />
-    <script type="text/javascript" src="lib/colorpicker/js/jquery.js"></script>
-    <script type="text/javascript" src="lib/colorpicker/js/colorpicker.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
   </head>
   <body>
     <div class="buttons">
@@ -64,26 +62,29 @@
         tumblr: 'a[href="http://www.tumblr.com/share"]'
       };
 
+      var $style = null;
+      function setColor(c){
+        if (!$style)
+          return;
+
+        styleCSS = '';
+
+        for (var company in SELECTORS){
+          var $iframe = $(SELECTORS[company]);
+
+          var h = (360 - BASE_COLORS[company].h + c) % 360;
+
+          styleCSS += SELECTORS[company] + ' {\n';
+          styleCSS += '  -webkit-filter: hue-rotate(' + h + 'deg);\n';
+          styleCSS += '}\n';
+        }
+
+        $style.html(styleCSS);
+      };
       $(function(){
-        var $style = $('<style>');
+        $style = $('<style>');
         $('head').append($style);
         
-        function setColor(c){
-          styleCSS = '';
-
-          for (var company in SELECTORS){
-            var $iframe = $(SELECTORS[company]);
-
-            var h = (360 - BASE_COLORS[company].h + c) % 360;
-
-            styleCSS += SELECTORS[company] + ' {\n';
-            styleCSS += '  -webkit-filter: hue-rotate(' + h + 'deg);\n';
-            styleCSS += '}\n';
-          }
-
-          $style.html(styleCSS);
-        };
-
         setColor(315);
       });
     </script>
