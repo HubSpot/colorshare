@@ -140,11 +140,11 @@ textarea {
     box-sizing: border-box;
     resize: none;
     outline: none;
-    height: 2.3rem;
-    font-size: 0.8rem;
+    height: 6rem;
+    font-size: 0.4rem;
     padding: 0.2rem;
     color: #888;
-    line-height: 1rem;
+    overflow: hidden;
 }
 
 textarea:focus {
