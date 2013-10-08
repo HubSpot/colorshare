@@ -16,12 +16,13 @@
         <link rel="stylesheet" href="style.css" />
         <style class="ui-styles"></style>
         <style class="embed-code-styles"></style>
+
         <script>
             var INITIAL_HUE = 315;
 
             var BASE_COLORS = {
                 twitter: {h: 211, s: 52, b: 89},
-                facebook: {h: 229, s: 57, b: 62},
+                facebook: {h: 226, s: 57, b: 62},
                 google: {h: 18, s: 71, b: 76},
                 hn: {h: 32, s: 73, b: 76},
                 linkedin: {h: 215, s: 55, b: 73},
@@ -41,28 +42,77 @@
                 github: 'iframe[src^="http://ghbtns.com"]'
             };
 
-            function setColor(c) {
-                styleCSS = '<style>\n';
+            var EXTRA = {
+                facebook: 'saturate(3)'
+            };
 
-                for (var company in SELECTORS) {
-                    var $iframe = $(SELECTORS[company]);
+            var hues = {};
+            var animation = null;
 
-                    var h = (360 - BASE_COLORS[company].h + c) % 360;
+            function writeCSS() {
+                var combinedSelectors = [];
+                var css = '<style>\n';
 
-                    styleCSS += '    ' + SELECTORS[company] + '{';
-                    styleCSS += '-webkit-filter: hue-rotate(' + h + 'deg);';
-                    styleCSS += '}\n';
+                for (var company in hues) {
+                    var selector = SELECTORS[company];
+                    combinedSelectors.push(selector);
+
+                    var colorFilter = 'hue-rotate(' + hues[company] + 'deg)';
+
+                    if (EXTRA[company])
+                        colorFilter += ' ' + EXTRA[company];
+
+                    var selCSS = '    -webkit-filter: ' + colorFilter + ';\n';
+
+                    if (animation){
+                        css += '@-webkit-keyframes ' + company + 'SocialAnimation {\n';
+                        for (var key in animation.keyframes){
+                            css += '    ' + key + '% {\n';
+                            css += '        -webkit-filter: ' + colorFilter + ' ' + animation.keyframes[key].filter + ';\n';
+                            css += '    ' + '}\n';
+                        }
+                        css += '}\n';
+
+                        selCSS += '    -webkit-animation-name: ' + company + 'SocialAnimation;\n';
+                        selCSS += '    -webkit-animation-iteration-count: ' + (animation.iterationCount || '1') + ';\n';
+                        selCSS += '    -webkit-animation-timing-function: ' + (animation.timingFunction || 'linear') + ';\n';
+                        selCSS += '    -webkit-animation-duration: ' + (animation.duration || '1s') + ';\n';
+                    }
+
+                    css += selector + ' {\n';
+                    css += selCSS;
+                    css += '}\n';
                 }
 
-                styleCSS += '</style>'
+                css += '</style>'
+                
+                $('.embed-code-styles').html(css);
+                $('.embed-code').val(css);
+            }
 
-                $('.embed-code-styles').html(styleCSS);
-                $('.embed-code').val(styleCSS);
+            function setColor(c) {
+                for (var company in SELECTORS) {
+                    hues[company] = (360 - BASE_COLORS[company].h + c) % 360;
+                }
+
+                writeCSS();
+            }
+
+            function setAnimation(anim) {
+                animation = anim;
+
+                writeCSS();
             }
 
             function setUIColors(c) {
                 $('.ui-styles').html('h1 { color: hsl(' + c + ', 75%, 50%); } .step > h3 > span { background: hsl(' + c + ', 75%, 50%); } textarea:focus { outline: 2px solid hsl(' + c + ', 75%, 50%); }');
             }
+
+            var ANIMATIONS = {
+                'glow': ['drop-shadow(0 0 4px gold)', 'drop-shadow(0 0 0 gold)'],
+                'colorize': ['grayscale(1)', 'grayscale(0)'],
+                'blur': ['blur(7px)', 'blur(0)']
+            };
 
             $(function(){
                 setColor(INITIAL_HUE);
@@ -70,6 +120,15 @@
                 $('textarea').click(function(e){
                     e.preventDefault();
                     $(this).select();
+                });
+
+                $('#animation-type').change(function(){
+                    var choice = ANIMATIONS[$(this).val().toLowerCase()];
+
+                    if (!choice)
+                        setAnimation(null);
+                    else
+                        setAnimation({keyframes: {0: {filter: choice[0]}, 100: {filter: choice[1]}}});
                 });
             });
 
@@ -221,7 +280,7 @@
             </div>
 
             <div class="step">
-                <h3><span>4</span>Share the love ;)</h3>
+                <h3><span>4</span>Tell your friends</h3>
                 <div class="step-inner">
                     <div class="embed-codes">
                         <div class="horizontal">
@@ -248,6 +307,19 @@
                             </div>
                         </div>
                     </div>
+                </div>
+            </div>
+
+            <div class="step">
+                <h3><span>5</span>Play around</h3>
+                <div class="step-inner">
+                    <label for="animation-type">Loading Animation</label>
+                    <select id="animation-type">
+                        <option>None
+                        <option>Glow
+                        <option>Blur
+                        <option>Colorize
+                    </select>
                 </div>
             </div>
         </div>
